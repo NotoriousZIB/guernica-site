@@ -103,7 +103,8 @@ img {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Playfair Display", serif;
   line-height: 1.2;
 }
@@ -152,6 +153,46 @@ h2 {
   background: var(--cinza-escuro);
 }
 
+.lista-destaques {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.lista-destaques li {
+  padding: 0.95rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.grade-correntes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.cartao-texto {
+  background: #15161a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cartao-texto:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cartao-texto h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+
 .grade-galeria {
   display: grid;
   gap: 1rem;
@@ -195,6 +236,115 @@ h2 {
   background: #15161a;
   border-left: 4px solid var(--cinza-medio);
   border-radius: 6px;
+}
+
+.linha-temporal {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+}
+
+.evento-temporal {
+  background: #111215;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.evento-temporal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #c7c9cf, #5e616a);
+}
+
+.evento-temporal .ano {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--cinza-claro);
+}
+
+.cartao-post {
+  margin-top: 1.2rem;
+  max-width: 560px;
+  background: #101115;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.post-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #2d3037;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.post-utilizador {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--branco);
+}
+
+.post-local {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: var(--cinza-medio);
+}
+
+.post-imagem {
+  min-height: 210px;
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.55)),
+    url("https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg")
+      center / cover no-repeat;
+  display: grid;
+  place-items: end start;
+  padding: 1rem;
+}
+
+.post-imagem p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  color: #f2f3f5;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+}
+
+.post-conteudo {
+  padding: 1rem;
+}
+
+.legenda-principal {
+  font-weight: 600;
+  color: var(--branco);
+}
+
+.hashtags {
+  color: #cfd2d9;
+  font-weight: 500;
 }
 
 .rodape {
@@ -254,5 +404,9 @@ h2 {
 
   .hero {
     min-height: 78vh;
+  }
+
+  .cartao-post {
+    max-width: 100%;
   }
 }
